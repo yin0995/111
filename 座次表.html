@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>座次表</title>
+    <style>
+        canvas{
+            display:block;
+        }
+        #canvas_z{
+            margin-left:200px;
+            margin-bottom:30px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas_z" style="width:400px;height:80px;background:green;"></canvas>
+    <canvas id="canvas" style="width: 840px; height:500px;border:1px solid #ccc"></canvas>
+    <script>
+        let cvs = document.getElementById('canvas');
+        //console.log(cvs.width,cvs.height)
+        let pen = cvs.getContext('2d');
+        let x_width = 50;
+        let x_height = 30;
+        //绘制横线
+        for(let i = 0;i <= cvs.height/x_height;i++){
+            pen.moveTo(0,i*x_height);
+            pen.lineTo(cvs.width,i*x_height);
+        }
+         //绘制竖线
+        for(let a = 0;a <= cvs.width/x_width;a++){
+            pen.moveTo(a*x_width,0);
+            pen.lineTo(a*x_width,cvs.height);
+        } 
+        pen.lineWidth = 0.6;
+        pen.strokeStyle = '#000';
+        pen.stroke();
+    </script>
+</body>
+</html>
