@@ -1,6 +1,0 @@
-
-合并流程：
-    开发分支：操作完成【push完成】
-    切换到主分支  master 
-    合并：git merge 分支名
-    推送：git push 
